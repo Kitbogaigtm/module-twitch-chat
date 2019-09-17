@@ -1,0 +1,15 @@
+{
+    "name": "twitch-chat",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "Apache-2.0",
+    "casthub": {
+        "width": 5,
+        "height": 7,
+        "min_width": 5,
+        "min_height": 7,
+        "max_width": 9,
+        "max_height": 12,
+        "actions": "floating"
+    }
+}
