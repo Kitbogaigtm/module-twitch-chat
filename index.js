@@ -16,8 +16,6 @@ module.exports = class extends window.casthub.module {
         this.css = `
             .module {
                 display: flex;
-                width: 100%;
-                height: 100%;
                 flex-direction: row;
             }
 
@@ -36,18 +34,11 @@ module.exports = class extends window.casthub.module {
      * @return {Promise}
      */
     mounted() {
-        if (!this.identities.length) {
-            return Promise.reject('No Integration data present');
-        }
-
-        const { id } = this.identities[0];
-
         return super.mounted().then(() => {
             return window.casthub.fetch({
                 integration: 'twitch',
                 method: 'GET',
                 url: 'kraken/channel',
-                identity: id,
             });
         }).then(response => {
             this.channel = response.name;
